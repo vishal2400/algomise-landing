@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* ── Electric Ice palette + Netlify font set ─────────────────────── */
+@theme {
+  --color-void: #060b13;
+  --color-surface: #0c1522;
+  --color-raised: #132033;
+  --color-line: #20334d;
+  --color-ink: #eaf0fa;
+  --color-muted: #8aa0bc;
+  --color-accent: #38bdf8;
+  --color-ice: #93c5fd;
+
+  --font-display: var(--font-figtree), system-ui, Helvetica, sans-serif;
+  --font-body: var(--font-instrument), system-ui, Helvetica, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #05080f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
