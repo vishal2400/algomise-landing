@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
-/* ── Electric Ice palette + Netlify font set ─────────────────────── */
+/* ── Monochrome editorial palette (light default + dark switch) ───── */
 @theme {
-  --color-void: #060b13;
-  --color-surface: #0c1522;
-  --color-raised: #132033;
-  --color-line: #20334d;
-  --color-ink: #eaf0fa;
-  --color-muted: #8aa0bc;
-  --color-accent: #38bdf8;
-  --color-ice: #93c5fd;
+  --color-paper: var(--c-paper);
+  --color-card: var(--c-card);
+  --color-panel: var(--c-panel);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
 
   --font-display: var(--font-figtree), system-ui, Helvetica, sans-serif;
   --font-body: var(--font-instrument), system-ui, Helvetica, sans-serif;
@@ -17,6 +15,22 @@
 }
 
 :root {
+  --c-paper: #f4f3f0;
+  --c-card: #ffffff;
+  --c-panel: #e9e8e3;
+  --c-ink: #0d0d0d;
+  --c-muted: #6c6c69;
+  --c-line: #deded9;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --c-paper: #0a0a0a;
+  --c-card: #151514;
+  --c-panel: #1b1b19;
+  --c-ink: #f4f3f0;
+  --c-muted: #9b9b96;
+  --c-line: #2a2a27;
   color-scheme: dark;
 }
 
@@ -25,20 +39,24 @@ html {
 }
 
 body {
-  background-color: var(--color-void);
+  background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: #05080f;
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  body {
+    transition: none;
   }
 }

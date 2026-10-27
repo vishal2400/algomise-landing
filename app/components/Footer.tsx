@@ -2,12 +2,12 @@ import { company } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-void">
+    <footer className="border-t border-line bg-paper">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2">
-              <span className="grid h-7 w-7 place-items-center rounded-md border border-line bg-raised font-display text-sm font-bold text-accent">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-ink font-display text-sm font-bold text-paper">
                 A
               </span>
               <span className="font-display text-lg font-bold tracking-tight">algomise</span>
@@ -37,7 +37,7 @@ export default function Footer() {
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-ink transition-colors hover:text-accent"
+                    className="text-ink transition-colors hover:text-muted"
                   >
                     {p.label}
                   </a>
@@ -59,8 +59,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line pt-6 font-mono text-xs text-muted sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} {company.legalName} · New Delhi, India</span>
-          <span className="text-ice">Intelligence, engineered.</span>
+          <span>
+            © {new Date().getFullYear()} {company.legalName} · New Delhi, India
+          </span>
+          <span className="text-ink">Intelligence, engineered.</span>
         </div>
       </div>
     </footer>
