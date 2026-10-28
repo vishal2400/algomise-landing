@@ -1,6 +1,7 @@
 import { nav } from "@/lib/data";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "./Logo";
+import ContactTrigger from "./ContactTrigger";
 
 export default function Nav() {
   return (
@@ -25,12 +26,9 @@ export default function Nav() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href={nav.cta.href}
-            className="rounded-full bg-ink px-5 py-2.5 text-base font-semibold text-paper transition-opacity hover:opacity-90"
-          >
+          <ContactTrigger className="rounded-full bg-ink px-5 py-2.5 text-base font-semibold text-paper transition-opacity hover:opacity-90">
             {nav.cta.label}
-          </a>
+          </ContactTrigger>
         </div>
       </div>
     </header>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Instrument_Sans, Martian_Mono } from "next/font/google";
 import "./globals.css";
+import ContactForm from "./components/ContactForm";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -54,7 +55,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">
+        {children}
+        <ContactForm />
+      </body>
     </html>
   );
 }
