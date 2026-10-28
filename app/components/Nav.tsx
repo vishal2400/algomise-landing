@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-line/30 bg-paper/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] backdrop-blur-2xl backdrop-saturate-200">
+    <header className="sticky top-0 z-50 border-b border-line/20 bg-paper/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] backdrop-blur-xl backdrop-saturate-200">
       <div className="mx-auto flex h-20 w-full max-w-[1600px] items-center justify-between px-6 sm:px-10">
         <a href="#top" className="flex items-center gap-2.5">
           <Logo className="h-9 w-9 text-ink" />
