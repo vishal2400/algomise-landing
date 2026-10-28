@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* make Tailwind's dark: variant follow our data-theme attribute */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* ── Monochrome editorial palette (light default + dark switch) ───── */
 @theme {
   --color-paper: var(--c-paper);
@@ -36,6 +39,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* keep anchor targets clear of the sticky navbar */
+section[id] {
+  scroll-margin-top: 6rem;
 }
 
 body {

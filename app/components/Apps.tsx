@@ -5,22 +5,18 @@ export default function Apps() {
   return (
     <section id="apps" className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <SectionHead
-        num="01"
         eyebrow="Our products"
-        title="We build what we sell."
-        intro="Two consumer AI apps, live and paying real users in India. Everything we learn about reliability, cost and governance flows back into the systems we build for clients."
+        title="We build apps, too."
+        intro="Alongside the AI we build for clients, we ship our own apps. For now that's two reward apps — CoinJeeto and CashBoo — live and paying real users in India, with a few more in the build phase and launching soon. Everything we learn about reliability, cost and governance flows back into the systems we build for clients."
       />
 
       <div className="mt-12 grid gap-4 lg:grid-cols-2">
-        {apps.map((app, idx) => (
+        {apps.map((app) => (
           <article
             key={app.name}
             className="flex flex-col rounded-2xl border border-line bg-card p-7 transition-colors hover:border-ink sm:p-8"
           >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-muted">
-                {String(idx + 1).padStart(2, "0")}
-              </span>
+            <div className="flex items-center justify-end">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
                 <span className="h-1.5 w-1.5 rounded-full bg-ink" />
                 {app.status}

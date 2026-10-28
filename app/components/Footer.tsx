@@ -1,15 +1,14 @@
 import { company } from "@/lib/data";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-ink font-display text-sm font-bold text-paper">
-                A
-              </span>
+              <Logo className="h-7 w-7 text-ink" />
               <span className="font-display text-lg font-bold tracking-tight">algomise</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
@@ -28,19 +27,34 @@ export default function Footer() {
 
           <div>
             <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
+              Services
+            </h4>
+            <ul className="mt-4 space-y-2.5 text-sm text-muted">
+              {company.services.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
               Products
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {company.products.map((p) => (
                 <li key={p.label}>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ink transition-colors hover:text-muted"
-                  >
-                    {p.label}
-                  </a>
+                  {p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-ink transition-colors hover:text-muted"
+                    >
+                      {p.label}
+                    </a>
+                  ) : (
+                    <span className="text-muted">{p.label}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -48,11 +62,20 @@ export default function Footer() {
 
           <div>
             <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
-              Services
+              Connect
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm text-muted">
-              {company.services.map((s) => (
-                <li key={s}>{s}</li>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {company.connect.map((c) => (
+                <li key={c.label}>
+                  <a
+                    href={c.href}
+                    target={c.href.startsWith("http") ? "_blank" : undefined}
+                    rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-ink transition-colors hover:text-muted"
+                  >
+                    {c.label}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>

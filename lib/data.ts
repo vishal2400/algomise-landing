@@ -5,14 +5,13 @@ export const nav = {
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
   ],
-  cta: { label: "Book a call", href: "#contact" },
+  cta: { label: "Connect Us", href: "#contact" },
 };
 
 export const stats = [
-  { value: "30K+", label: "Play Store downloads" },
-  { value: "₹40K+", label: "Paid out to users" },
-  { value: "2", label: "Live consumer AI apps" },
-  { value: "60+", label: "Mini games shipped" },
+  { prefix: "", value: 30, suffix: "K+", label: "Play Store downloads" },
+  { prefix: "₹", value: 40, suffix: "K+", label: "Paid out to users" },
+  { prefix: "", value: 2, suffix: "", label: "Play Store live apps" },
 ];
 
 export const apps = [
@@ -23,7 +22,14 @@ export const apps = [
     description:
       "Our flagship earn-money app for India. Play 60+ mini games, answer surveys, watch videos and complete offer-wall tasks — then cash out to UPI, Paytm or gift cards. Lightweight, works on low internet.",
     tags: ["Games", "Surveys", "UPI payouts"],
-    links: [{ label: "Visit coinjeeto.com", href: "https://coinjeeto.com", primary: true }],
+    links: [
+      { label: "Visit coinjeeto.com", href: "https://coinjeeto.com", primary: true },
+      {
+        label: "Get it on Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.coinjeeto.app",
+        primary: false,
+      },
+    ],
     accent: "accent" as const,
   },
   {
@@ -107,7 +113,11 @@ export const company = {
   products: [
     { label: "CoinJeeto", href: "https://coinjeeto.com" },
     { label: "CashBoo", href: "https://cashboo.in" },
-  ],
+    { label: "Synapse", href: null },
+    { label: "Pulse", href: null },
+    { label: "Kernel", href: null },
+    { label: "Atlas", href: null },
+  ] as { label: string; href: string | null }[],
   services: [
     "AI Strategy",
     "Generative AI",
@@ -115,5 +125,16 @@ export const company = {
     "Data & Analytics",
     "Cloud & MLOps",
     "Custom Software",
+  ],
+  connect: [
+    { label: "hello@algomise.com", href: "mailto:hello@algomise.com" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/algomise-technologies/posts/?viewAsMember=true",
+    },
+    { label: "X / Twitter", href: "https://x.com/coinjeeto" },
+    { label: "Instagram", href: "https://www.instagram.com/algomise/" },
+    { label: "YouTube", href: "https://www.youtube.com/@AlgomiseRewards" },
+    { label: "GitHub", href: "https://github.com/Algomise" },
   ],
 };

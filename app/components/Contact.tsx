@@ -4,10 +4,8 @@ export default function Contact() {
   return (
     <section id="contact" className="border-t border-line bg-ink text-paper">
       <div className="mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-8 sm:py-28">
-        <div className="flex items-center justify-center gap-3 font-mono text-xs uppercase tracking-[0.12em] text-paper/60">
-          <span>04</span>
-          <span className="h-px w-8 bg-paper/30" />
-          <span>Ready when you are</span>
+        <div className="font-mono text-xs uppercase tracking-[0.12em] text-paper/60">
+          Ready when you are
         </div>
 
         <h2 className="mx-auto mt-5 max-w-2xl text-balance font-display text-3xl font-bold tracking-tight sm:text-5xl">
