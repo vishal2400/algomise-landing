@@ -29,7 +29,7 @@ export default function Hero() {
           href="#apps"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink px-7 py-4 font-display text-base font-bold text-paper shadow-[0_20px_50px_rgba(0,0,0,0.45)] transition-transform hover:scale-[1.04] sm:px-9 sm:py-5 sm:text-lg"
         >
-          Our Apps
+          Our Products
         </a>
       </div>
     </section>
