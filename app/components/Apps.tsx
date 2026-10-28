@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { apps } from "@/lib/data";
 import SectionHead from "./SectionHead";
 import coinjeetoLogo from "@/public/coinjeeto-logo.png";
 import cashbooLogo from "@/public/cashboo-logo.png";
 import moleculeArt from "@/public/molecule.webp";
+import moleculeArtDark from "@/public/molecule-dark.webp";
 
 const logos: Record<string, typeof coinjeetoLogo> = {
   CoinJeeto: coinjeetoLogo,
@@ -48,7 +50,13 @@ export default function Apps() {
           src={moleculeArt}
           alt=""
           priority={false}
-          className="h-auto w-full opacity-90 mix-blend-multiply drop-shadow-[0_30px_60px_rgba(0,0,0,0.12)] dark:opacity-80 dark:mix-blend-screen dark:invert dark:drop-shadow-none [mask-image:linear-gradient(to_right,transparent,black_10%)]"
+          className="h-auto w-full opacity-90 mix-blend-multiply drop-shadow-[0_30px_60px_rgba(0,0,0,0.12)] [mask-image:linear-gradient(to_right,transparent,black_10%)] dark:hidden"
+        />
+        <Image
+          src={moleculeArtDark}
+          alt=""
+          priority={false}
+          className="hidden h-auto w-full opacity-90 mix-blend-screen [mask-image:linear-gradient(to_right,transparent,black_10%)] dark:block"
         />
       </div>
 
@@ -62,8 +70,8 @@ export default function Apps() {
         {apps.map((app, i) => (
           <article
             key={app.name}
-            style={{ transitionDelay: shown ? `${i * 200}ms` : "0ms" }}
-            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-card transition-all duration-[1100ms] ease-out hover:border-ink motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${
+            style={{ "--reveal-delay": shown ? `${i * 200}ms` : "0ms" } as CSSProperties}
+            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-card [transition:transform_1100ms_ease-out_var(--reveal-delay),opacity_1100ms_ease-out_var(--reveal-delay),box-shadow_300ms_ease] hover:shadow-[0_22px_45px_-18px_rgba(0,0,0,0.3),0_6px_16px_-10px_rgba(0,0,0,0.18)] motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none dark:hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_26px_55px_-18px_rgba(0,0,0,0.75)] ${
               shown ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
