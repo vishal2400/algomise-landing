@@ -31,6 +31,7 @@ export const apps = [
       },
     ],
     accent: "accent" as const,
+    logoBg: "#0e0f23",
   },
   {
     name: "CashBoo",
@@ -48,6 +49,7 @@ export const apps = [
       },
     ],
     accent: "ice" as const,
+    logoBg: "#000000",
   },
 ];
 

@@ -1,11 +1,12 @@
 import { company } from "@/lib/data";
 import Logo from "./Logo";
+import ConnectList from "./ConnectList";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper">
-      <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+      <div className="mx-auto w-full max-w-[1500px] px-6 py-14 sm:px-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[3fr_1fr_1fr_1fr] lg:gap-12">
           <div>
             <div className="flex items-center gap-2">
               <Logo className="h-7 w-7 text-ink" />
@@ -64,20 +65,7 @@ export default function Footer() {
             <h4 className="font-mono text-xs uppercase tracking-[0.12em] text-muted">
               Connect
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              {company.connect.map((c) => (
-                <li key={c.label}>
-                  <a
-                    href={c.href}
-                    target={c.href.startsWith("http") ? "_blank" : undefined}
-                    rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-ink transition-colors hover:text-muted"
-                  >
-                    {c.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <ConnectList items={company.connect} />
           </div>
         </div>
 
